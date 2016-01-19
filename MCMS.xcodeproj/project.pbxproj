@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D9F94611C4ED20F000C5E53 /* MagicalMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9F94601C4ED20F000C5E53 /* MagicalMonster.m */; };
+		0D9F94641C4EDDFA000C5E53 /* MonsterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9F94631C4EDDFA000C5E53 /* MonsterViewController.m */; };
 		1EC6E84D1C4ECF09001EAA0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E84C1C4ECF09001EAA0F /* main.m */; };
 		1EC6E8501C4ECF09001EAA0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E84F1C4ECF09001EAA0F /* AppDelegate.m */; };
 		1EC6E8531C4ECF09001EAA0F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E8521C4ECF09001EAA0F /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		0D9F945F1C4ED20F000C5E53 /* MagicalMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalMonster.h; sourceTree = "<group>"; };
 		0D9F94601C4ED20F000C5E53 /* MagicalMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalMonster.m; sourceTree = "<group>"; };
+		0D9F94621C4EDDFA000C5E53 /* MonsterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterViewController.h; sourceTree = "<group>"; };
+		0D9F94631C4EDDFA000C5E53 /* MonsterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonsterViewController.m; sourceTree = "<group>"; };
 		1EC6E8481C4ECF09001EAA0F /* MCMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC6E84C1C4ECF09001EAA0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1EC6E84E1C4ECF09001EAA0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				0D9F945F1C4ED20F000C5E53 /* MagicalMonster.h */,
 				0D9F94601C4ED20F000C5E53 /* MagicalMonster.m */,
 				1EC6E8541C4ECF09001EAA0F /* Main.storyboard */,
+				0D9F94621C4EDDFA000C5E53 /* MonsterViewController.h */,
+				0D9F94631C4EDDFA000C5E53 /* MonsterViewController.m */,
 				1EC6E8571C4ECF0A001EAA0F /* Assets.xcassets */,
 				1EC6E8591C4ECF0A001EAA0F /* LaunchScreen.storyboard */,
 				1EC6E85C1C4ECF0A001EAA0F /* Info.plist */,
@@ -155,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9F94641C4EDDFA000C5E53 /* MonsterViewController.m in Sources */,
 				1EC6E8531C4ECF09001EAA0F /* ViewController.m in Sources */,
 				0D9F94611C4ED20F000C5E53 /* MagicalMonster.m in Sources */,
 				1EC6E8501C4ECF09001EAA0F /* AppDelegate.m in Sources */,

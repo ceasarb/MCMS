@@ -11,7 +11,7 @@
 @interface MagicalMonster : NSObject
 
 @property NSString *monsterName;
-@property NSString *monsterDescription;
+@property NSString *monsterDetail;
 @property NSMutableArray *accessories;
 
 @end

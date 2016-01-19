@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import "MagicalMonster.h"
+#import "MonsterViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *monsterNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *monsterDescriptionTextField;
+@property (weak, nonatomic) IBOutlet UITextField *monsterDetailTextField;
 
 @property NSMutableArray *monsters;
 
@@ -46,11 +47,17 @@
     return cell;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MonsterViewController *mvc = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    mvc.monster = [self.monsters objectAtIndex:indexPath.row];
+}
+
 
 - (IBAction)onAddButtonTapped:(UIButton *)sender {
-
-    NSString *addMonster = [NSString stringWithFormat:@"%@",self.monsterNameTextField.text];
-    [self.monsters addObject:addMonster];
+    MagicalMonster *monster =[[MagicalMonster alloc]init];
+    monster.monsterName = self.monsterNameTextField.text;
+    [self.monsters addObject:monster];
     [self.tableView reloadData];
     
     self.monsterNameTextField.text = @"";
