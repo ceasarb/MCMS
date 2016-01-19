@@ -10,4 +10,14 @@
 
 @implementation MagicalMonster
 
+-(instancetype)initWithMonsterName:(NSString *)monsterName andMonsterDetails:(NSString *)monsterDetail andAccessories:(NSMutableArray *)accessories {
+    self = [super init];
+    if (self) {
+        self.monsterName = monsterName;
+        self.monsterDetail = monsterDetail;
+        self.accessories = accessories;
+    }
+    return self;
+}
+
 @end

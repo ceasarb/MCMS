@@ -20,25 +20,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.monster.monsterName;
+    self.monsterDetailLabel.text = self.monster.monsterDetail;
     self.monsterNameLabel.text = self.monster.monsterName;
-    self.editing = false;
+    self.monsterNameTextField.hidden = YES;
 }
 
 
+
 - (IBAction)onEditButtonTapped:(UIButton *)sender {
-    if(self.editing)
-    {
-        self.editing = false;
-//        [sender setEnabled: YES];
-//        sender.style = UIBarButtonItemStylePlain;
-        sender.titleLabel.text = @"Edit";
-    }
-    else
-    {
-        self.editing = true;
-//        [sender setEnabled: YES];
-//        sender.style = UIBarButtonItemStyleDone;
+    if ([sender.titleLabel.text isEqualToString:@"Edit"]) {
+        self.monsterNameTextField.hidden = NO;
+        self.monsterNameLabel.hidden = YES;
+        self.monsterNameLabel.text = self.monsterNameTextField.text;
         sender.titleLabel.text = @"Done";
+    } else {
+        self.monsterNameTextField.hidden = YES;
+        self.monsterNameLabel.hidden = NO;
+        sender.titleLabel.text = @"Edit";
     }
 }
 

@@ -100,7 +100,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fes-kz-gPK">
-                        <barButtonItem key="rightBarButtonItem" title="Battle" id="xN6-OM-BJ3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="xN6-OM-BJ3">
+                            <connections>
+                                <action selector="onEditButtonTapped:" destination="BYZ-38-t0r" id="Rv5-17-u8K"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="monsterDetailTextField" destination="x3e-Ef-Mtr" id="Ke8-5S-fFj"/>

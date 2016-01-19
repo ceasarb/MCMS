@@ -14,4 +14,6 @@
 @property NSString *monsterDetail;
 @property NSMutableArray *accessories;
 
+-(instancetype)initWithMonsterName:(NSString *)monsterName andMonsterDetails:(NSString *)monsterDetail andAccessories:(NSMutableArray *)accessories;
+
 @end
