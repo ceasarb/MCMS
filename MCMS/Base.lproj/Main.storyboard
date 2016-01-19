@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="N6c-m5-oKn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-Qb-pGt">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" id="2Qj-fS-eIS">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Qj-fS-eIS" id="aCb-K4-VHh">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="96a-1W-ub0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zlD-Wc-Vnu"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Monster Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3e-Ef-Mtr">
+                                <rect key="frame" x="20" y="95" width="486" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xju-ty-zK8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93o-gB-LHB">
+                                <rect key="frame" x="542" y="79" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="53o-8t-9s0"/>
+                                    <constraint firstAttribute="width" constant="30" id="X6Q-73-tas"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="onAddButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1a2-Mq-Vs2"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Monster Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AoE-Bn-QuL">
+                                <rect key="frame" x="20" y="64" width="486" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PJk-yI-yFz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AoE-Bn-QuL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8TQ-tQ-87T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="93o-gB-LHB" secondAttribute="trailing" constant="8" id="JWE-8N-RSc"/>
+                            <constraint firstItem="93o-gB-LHB" firstAttribute="leading" secondItem="x3e-Ef-Mtr" secondAttribute="trailing" constant="36" id="MUJ-Qj-iaK"/>
+                            <constraint firstItem="x3e-Ef-Mtr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="POS-wZ-HX6"/>
+                            <constraint firstItem="93o-gB-LHB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="SrJ-KY-Abi"/>
+                            <constraint firstItem="oVt-Qb-pGt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="b2t-T8-zf8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oVt-Qb-pGt" secondAttribute="bottom" id="fKQ-Cm-2bn"/>
+                            <constraint firstItem="AoE-Bn-QuL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mxU-gU-SN7"/>
+                            <constraint firstItem="oVt-Qb-pGt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="qk6-Ny-GEV"/>
+                            <constraint firstItem="93o-gB-LHB" firstAttribute="leading" secondItem="AoE-Bn-QuL" secondAttribute="trailing" constant="36" id="u0b-2n-GEb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oVt-Qb-pGt" secondAttribute="trailing" constant="-20" id="x5i-0E-20f"/>
+                            <constraint firstItem="x3e-Ef-Mtr" firstAttribute="top" secondItem="AoE-Bn-QuL" secondAttribute="bottom" constant="1" id="yqA-NQ-v4n"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fes-kz-gPK">
+                        <barButtonItem key="rightBarButtonItem" title="Battle" id="xN6-OM-BJ3"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="monsterDescriptionTextField" destination="x3e-Ef-Mtr" id="bUQ-5L-iBN"/>
+                        <outlet property="monsterNameTextField" destination="AoE-Bn-QuL" id="032-W1-VxO"/>
+                        <outlet property="tableView" destination="oVt-Qb-pGt" id="VfL-Eh-BPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1032" y="339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FSa-9C-xbe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N6c-m5-oKn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NVk-SR-9lM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yQN-1L-iV4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="un3-2e-0OZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="339"/>
         </scene>
     </scenes>
 </document>

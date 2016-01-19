@@ -7,8 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "MagicalMonster.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *monsterNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *monsterDescriptionTextField;
+
+@property NSMutableArray *monsters;
 
 @end
 
@@ -16,12 +22,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    MagicalMonster *monster1 = [[MagicalMonster alloc]init];
+    MagicalMonster *monster2 = [[MagicalMonster alloc]init];
+    MagicalMonster *monster3 = [[MagicalMonster alloc]init];
+    
+    monster1.monsterName = @"Monster1";
+    monster2.monsterName = @"Monster2";
+    monster3.monsterName = @"Monster3";
+    
+    self.monsters = [NSMutableArray arrayWithObjects:monster1, monster2, monster3, nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.monsters.count;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
+    MagicalMonster *monster = [self.monsters objectAtIndex:indexPath.row];
+    cell.textLabel.text = monster.monsterName;
+    return cell;
+}
+
+
+- (IBAction)onAddButtonTapped:(UIButton *)sender {
+
+    NSString *addMonster = [NSString stringWithFormat:@"%@",self.monsterNameTextField.text];
+    [self.monsters addObject:addMonster];
+    [self.tableView reloadData];
+    
+    self.monsterNameTextField.text = @"";
+    [self.monsterNameTextField endEditing:YES];
 }
 
 @end
