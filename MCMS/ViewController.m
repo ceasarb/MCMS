@@ -28,8 +28,14 @@
     MagicalMonster *monster3 = [[MagicalMonster alloc]initWithMonsterName:@"Dracula" andMonsterDetails:@"Has sharp fangs" andAccessories:[NSMutableArray arrayWithObjects:@"Cape", @"Coffin", nil]];
     
     self.monsters = [NSMutableArray arrayWithObjects:monster1, monster2, monster3, nil];
+    
 }
 
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+    NSLog(@"Monster name is now %@", self.monsters);
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.monsters.count;
@@ -61,6 +67,7 @@
     [self.monsters removeObject:monster];
     [self.monsters insertObject:monster atIndex:destinationIndexPath.row];
 }
+
 
 - (IBAction)onEditButtonTapped:(UIBarButtonItem *)sender {
     if(self.editing)

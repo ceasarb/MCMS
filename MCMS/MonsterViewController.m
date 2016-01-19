@@ -26,18 +26,21 @@
 }
 
 
-
-- (IBAction)onEditButtonTapped:(UIButton *)sender {
-    if ([sender.titleLabel.text isEqualToString:@"Edit"]) {
+- (IBAction)onEditButtonTapped:(UIBarButtonItem *)sender {
+    if ([sender.title isEqualToString:@"Edit"]) {
+        sender.title = @"Done";
         self.monsterNameTextField.hidden = NO;
         self.monsterNameLabel.hidden = YES;
-        self.monsterNameLabel.text = self.monsterNameTextField.text;
-        sender.titleLabel.text = @"Done";
     } else {
+        sender.title = @"Edit";
         self.monsterNameTextField.hidden = YES;
         self.monsterNameLabel.hidden = NO;
-        sender.titleLabel.text = @"Edit";
+        self.monsterNameLabel.text = self.monsterNameTextField.text;
+        self.monster.monsterName = self.monsterNameTextField.text;
+        self.title = self.monsterNameTextField.text;
     }
 }
+
+
 
 @end

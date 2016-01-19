@@ -22,11 +22,11 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" textLabel="hkd-3m-2oH" detailTextLabel="BuR-x0-IVJ" style="IBUITableViewCellStyleSubtitle" id="2Qj-fS-eIS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" textLabel="hkd-3m-2oH" detailTextLabel="BuR-x0-IVJ" style="IBUITableViewCellStyleSubtitle" id="2Qj-fS-eIS">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Qj-fS-eIS" id="aCb-K4-VHh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hkd-3m-2oH">
@@ -46,7 +46,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ra3-ri-cQ5" kind="show" identifier="ShowMonsterSegue" id="RJ0-aU-igq"/>
+                                            <segue destination="ra3-ri-cQ5" kind="push" id="KmH-af-ugY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -128,17 +128,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0D-SQ-7qr">
-                                <rect key="frame" x="534" y="72" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="7cM-Th-pIL"/>
-                                    <constraint firstAttribute="width" constant="46" id="D51-M2-VqQ"/>
-                                </constraints>
-                                <state key="normal" title="Edit"/>
-                                <connections>
-                                    <action selector="onEditButtonTapped:" destination="ra3-ri-cQ5" eventType="touchUpInside" id="O2P-FN-qPL"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGP-uQ-ska">
                                 <rect key="frame" x="20" y="129" width="505" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -150,14 +139,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdk-27-6e0">
-                                <rect key="frame" x="-50" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="Sth-GA-VM6">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="lx1-y7-wGK" userLabel="Edit"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdD-Ss-b5g">
                                 <rect key="frame" x="20" y="192" width="505" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -166,11 +147,16 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="W0D-SQ-7qr" firstAttribute="trailing" secondItem="z3c-a0-bU9" secondAttribute="trailingMargin" id="3Wl-Mz-C5R"/>
-                            <constraint firstItem="W0D-SQ-7qr" firstAttribute="top" secondItem="G73-DC-n3R" secondAttribute="bottom" constant="8" id="7BB-DG-d3U"/>
-                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZT1-po-Idr">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" width="364" style="plain" id="wbU-vI-vvc">
+                            <connections>
+                                <action selector="onEditButtonTapped:" destination="ra3-ri-cQ5" id="xOQ-QF-c6t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="monsterDetailLabel" destination="GdD-Ss-b5g" id="uDH-6P-12H"/>
                         <outlet property="monsterNameLabel" destination="RwG-Aj-hz2" id="pfq-Pe-E9V"/>
